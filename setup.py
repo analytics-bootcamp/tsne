@@ -47,9 +47,9 @@ else:
     
     # LINUX
     ext_modules = [Extension(name='bh_sne',
-                   sources=['tsne/bh_sne_src/quadtree.cpp', 'tsne/bh_sne_src/tsne.cpp', 'tsne/bh_sne.pyx', 'c:/openblas'],
+                   sources=['tsne/bh_sne_src/quadtree.cpp', 'tsne/bh_sne_src/tsne.cpp', 'tsne/bh_sne.pyx'],
                    include_dirs=[numpy.get_include(), '/usr/local/include', 'tsne/bh_sne_src/','c:/openblas'],
-                   library_dirs=['/usr/local/lib'],
+                   library_dirs=['/usr/local/lib','c:/openblas'],
                    extra_compile_args=['-msse2', '-O3', '-fPIC', '-w'],
                    extra_link_args=extra_link_args,
                    language='c++')]
